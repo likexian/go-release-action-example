@@ -4,6 +4,12 @@
 
 Example for automate publishing Go build binary artifacts to GitHub releases through GitHub Actions.
 
+## Go Release Action
+
+Automate publishing Go build binary artifacts to GitHub releases through GitHub Actions.
+
+Please refer to: [go-release-action](https://github.com/likexian/go-release-action)
+
 ## License
 
 Copyright 2021-2022 [Li Kexian](https://www.likexian.com/)
