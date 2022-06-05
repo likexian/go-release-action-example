@@ -23,7 +23,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Release code
-        uses: likexian/go-release-action@v0.2.0
+        uses: likexian/go-release-action@v0.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOS: ${{ matrix.goos }}
@@ -36,3 +36,5 @@ jobs:
           PACK_ASSET_FILE: hello-${{ matrix.goos }}-${{ matrix.goarch }}
           PACK_INCLUDE_DIR: hello
           PACK_EXTRA_FILES: LICENSE README.md
+      - name: Release version
+        run: echo ${{ env.tag_name }}
