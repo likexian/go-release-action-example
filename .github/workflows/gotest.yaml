@@ -32,12 +32,12 @@ jobs:
         os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
       - name: Set up Go
         uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go }}
-      - name: Checkout code
-        uses: actions/checkout@v6
       - name: GoTest code
         run: |
           sudo go test -race -coverprofile="coverage.txt" -covermode=atomic ./...
