@@ -1,3 +1,3 @@
 module github.com/likexian/go-release-action-example
 
-go 1.21
+go 1.25.5

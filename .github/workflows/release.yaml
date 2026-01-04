@@ -21,9 +21,9 @@ jobs:
             goarch: "386"
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
       - name: Release code
-        uses: likexian/go-release-action@v0.7.0
+        uses: likexian/go-release-action@v0.9.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOS: ${{ matrix.goos }}
@@ -33,6 +33,7 @@ jobs:
           BUILD_BIN_FILE: hello
           BUILD_FLAGS: -v
           BUILD_LDFLAGS: -w -s
+          BUILD_STATIC: true
           PACK_ASSET_FILE: hello-${{ matrix.goos }}-${{ matrix.goarch }}
           PACK_INCLUDE_DIR: hello
           PACK_EXTRA_FILES: LICENSE README.md
